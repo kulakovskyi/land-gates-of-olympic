@@ -86,6 +86,7 @@ body
       transform: translateX(-50%)
       position: absolute
       width: 610px
+
     &-bubble
       position: absolute
       padding: 30px 16px 5px 5px
@@ -360,7 +361,7 @@ body
         background:  url("../img/pillars2-mob.png") no-repeat 50% 0/contain
   &__lighting
     &-one
-      animation: 4s infinite bulbs-opacity ease
+      animation: 2s infinite bulbs-opacity ease
       position: absolute
       width: 64vh
       height: 75vh
@@ -375,7 +376,7 @@ body
       @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
         background:  url("../img/lighting1-mob.png") no-repeat 50% 0/contain
     &-two
-      animation: 5s infinite bulbs-opacity ease
+      animation: 3s infinite bulbs-opacity ease
       opacity: 0
       animation-delay: 1s
       position: absolute
@@ -548,7 +549,7 @@ body
       letter-spacing: 0.03em
       color: #000055
     &-image
-      animation: 5s infinite zevs ease
+      animation: 3s infinite zevs ease
       height: 95vh
       position: absolute
       width: 54vh
@@ -560,6 +561,7 @@ body
         height: 100%
         position: absolute
         top: 0
+
     &-wrapper
       position: relative
       bottom: -220px
@@ -728,7 +730,18 @@ body
 .audio
   display: none
 .pulse-btn
-  animation: 1.8s infinite pulse-btn ease-in-out
+  animation: 1.2s infinite pulse-btn ease-in-out
+
+.land__image-main
+  animation: 1.7s infinite zevs-drop ease
+
+@keyframes zevs-drop
+  0%
+    filter: drop-shadow(0 0 0.15rem rgb(182, 225, 246))
+  50%
+    filter: drop-shadow(0 0 1.25rem rgb(182, 225, 246))
+  100%
+    filter: drop-shadow(0 0 0.15rem rgb(182, 225, 246))
 
 @keyframes pulse-btn
   0%
