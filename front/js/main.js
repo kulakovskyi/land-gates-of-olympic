@@ -2,23 +2,21 @@
 const playBtn = document.querySelector('.bonus__main-wheel-btn'),
       main = document.querySelector('.bonus__main'),
       wheel = document.querySelector('.bonus__main-wheel-reel'),
-      mainWheel = document.querySelector('.bonus__main-wheel'),
       overlay = document.querySelector('.bonus__overlay'),
       popupFirst = document.querySelector('.bonus__firstWin'),
       popupFirstBtn = document.querySelector('.bonus__firstWin-btn'),
       popupSecond = document.querySelector('.bonus__secondWin'),
       overflow = document.querySelector('body'),
       wrapper = document.querySelector('.bonus'),
-      rotateText = document.querySelector('.bonus__main-txt-center');
+      bubbleText = document.querySelector('.bonus__main-bubble')
 
 
 let triesCounter = 0
-let textAfterRotate = 'У тебе <span>1</span> спроба';
+let babbleTextAfterRotation = 'Маeш одну спробу, смертний'
 
 playBtn.addEventListener('click', () => {
     if (triesCounter === 0) {
         runFirstRotation()
-        rotateText.innerHTML = textAfterRotate;
     } else {
         runSecondRotation()
     }
@@ -29,16 +27,15 @@ function runFirstRotation() {
     playBtn.classList.remove('pulse-btn')
     playBtn.style.cursor = 'default'
     wrapper.style.pointerEvents = 'none'
-    setTimeout(() => {
-        mainWheel.classList.add('_win')
-    }, 6000)
+
     setTimeout(() => {
         doAfterFirstRotation()
-    }, 8000)
+    }, 6000)
     triesCounter++
 }
 
 function doAfterFirstRotation() {
+    bubbleText.innerHTML  = babbleTextAfterRotation;
     wheel.style.transform = 'rotate(992deg)'
     wheel.classList.remove('reel-rotation-first')
     displayPopup(popupFirst)
@@ -56,13 +53,9 @@ function runSecondRotation() {
     playBtn.style.cursor = 'default'
     overflow.style.overflow = 'hidden'
     wrapper.style.pointerEvents = 'none'
-
-    setTimeout(() => {
-        mainWheel.classList.add('_win')
-    }, 6000)
     setTimeout(() => {
         doAfterSecondRotation()
-    }, 8000)
+    }, 6000)
     triesCounter++
 }
 
@@ -76,7 +69,7 @@ popupFirstBtn.addEventListener('click', () => {
     overlay.classList.add('opacity-overlay')
     popupFirst.classList.add('hide')
     overflow.style.overflow = 'unset'
-    mainWheel.classList.remove('_win')
+
 })
 
 function displayPopup(popup) {
