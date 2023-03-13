@@ -36,6 +36,8 @@ playBtn.addEventListener("click", function () {
     (0 === triesCounter ? runFirstRotation : runSecondRotation)()
 }), popupFirstBtn.addEventListener("click", function () {
     overlay.classList.add("opacity-overlay"), popupFirst.classList.add("hide"), overflow.style.overflow = "unset"
+}), window.addEventListener("orientationchange", function () {
+    window.location.reload()
 }), function () {
     var e, r = new URL(window.location.href),
         a = ["l", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "param1", "param2"];

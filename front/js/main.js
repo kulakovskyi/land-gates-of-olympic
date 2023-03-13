@@ -78,6 +78,15 @@ function displayPopup(popup) {
 
 }
 
+window.addEventListener('orientationchange', () => {
+    window.location.reload()
+    // const orientation = window.matchMedia('(orientation: landscape)')
+    //
+    // if (orientation.matches) {
+    //     window.location.reload()
+    // }
+});
+
 
 (function () {
     var url = new URL(window.location.href);
